@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <form #f="ngForm" (ngSubmit)="submit()">
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" required [(ngModel)]="myemail"  name="email" #email="ngModel" class="form-control"
+          id="email">
+          </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input  type="password" required  [(ngModel)]="mypassword" class="form-control" name="password" id="pwd">
+        </div>
+        <a (click)="reset()" block clear>Resetpassword</a><br>
+        <button type="submit" ion-button  [disabled]="!f.valid">LogIn</button>
+      </form>
+      <br>
+      <div>
+      <span>If you use first time this app then <br>click here to register.
+      <a (click)="signup()">Signup</a></span>
+      </div>
+      <div>
+        <button ion-button block color="light" (click)="loginwithgoogle()">Google+</button>
+        <button ion-button block color="light" (click)="LoginwithFacebook()">Facebook</button>
+        </div>      
+</ion-content>  

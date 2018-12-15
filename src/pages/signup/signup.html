@@ -1,0 +1,34 @@
+<!--
+  Generated template for the SignupPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Signup</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form  #f="ngForm" (ngSubmit)="submit(f)">
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" required [(ngModel)]="myemail"  name="email" #email="ngModel" class="form-control"
+        id="email">
+      </div>
+      <div class="form-group">
+        <label for="confirm_email">Confirm Email:</label>
+        <input type="email" required [(ngModel)]="myconfirm_email"  name="confirm_email" #confirm_email="ngModel" class="form-control"
+          id="confirm_email">
+        </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input  type="password" required  [(ngModel)]="mypassword" class="form-control" name="password" id="pwd">
+    </div>
+    <button type="submit" ion-button [disabled]="!f.valid">Submit</button>
+  </form>
+</ion-content>
